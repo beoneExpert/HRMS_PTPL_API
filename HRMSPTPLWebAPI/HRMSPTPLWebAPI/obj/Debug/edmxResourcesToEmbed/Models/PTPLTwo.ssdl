@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SecondModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HRMS_PTPL.dbo.EmployeeContact' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeContact">
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="currAddress" Type="nvarchar(max)" />
+          <Property Name="perAddress" Type="nvarchar(max)" />
+          <Property Name="mobNo" Type="nvarchar(max)" />
+          <Property Name="mobNo1" Type="nvarchar(max)" />
+          <Property Name="whatsupNo" Type="nvarchar(max)" />
+          <Property Name="primEmail" Type="nvarchar(max)" />
+          <Property Name="alterEmail" Type="nvarchar(max)" />
+          <Property Name="fatherName" Type="nvarchar(max)" />
+          <Property Name="montherName" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HRMS_PTPL.dbo.EmployeeInfo' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeInfo">
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="gender" Type="nvarchar" MaxLength="1" />
+          <Property Name="birthDate" Type="date" />
+          <Property Name="birthPlace" Type="nvarchar(max)" />
+          <Property Name="bloodGroup" Type="nvarchar" MaxLength="3" />
+          <Property Name="fatherName" Type="nvarchar(max)" />
+          <Property Name="montherName" Type="nvarchar(max)" />
+          <Property Name="panNo" Type="nvarchar(max)" />
+          <Property Name="aadhaarNo" Type="nvarchar(max)" />
+          <Property Name="esicNo" Type="nvarchar(max)" />
+          <Property Name="pfNo" Type="nvarchar(max)" />
+          <Property Name="pfScheme" Type="nvarchar(max)" />
+          <Property Name="joiningDate" Type="date" />
+          <Property Name="confirmDate" Type="date" />
+          <Property Name="resignDate" Type="date" />
+          <Property Name="status" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HRMS_PTPL.dbo.EmployeeLeave' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeLeave">
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="leave_id" Type="int" />
+          <Property Name="fromDate" Type="date" />
+          <Property Name="toDate" Type="date" />
+          <Property Name="leaveReason" Type="nvarchar(max)" />
+          <Property Name="leaveStatus" Type="nvarchar" MaxLength="10" />
+          <Property Name="rejReason" Type="nvarchar(max)" />
+          <Property Name="apprvedBy" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>-->
+  <EntityContainer Name="SecondModelStoreContainer" />
+</Schema>

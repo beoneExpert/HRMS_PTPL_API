@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRMS_PTPLModelStoreContainer" CdmEntityContainer="HRMS_PTPL_Entties">
+    <EntitySetMapping Name="AttendanceCategories">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.AttendanceCategory">
+        <MappingFragment StoreEntitySet="AttendanceCategory">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="attcat_id" ColumnName="attcat_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="shortName" ColumnName="shortName" />
+          <ScalarProperty Name="otFormula_id" ColumnName="otFormula_id" />
+          <ScalarProperty Name="minOTmin" ColumnName="minOTmin" />
+          <ScalarProperty Name="maxOTmin" ColumnName="maxOTmin" />
+          <ScalarProperty Name="graceLateMin" ColumnName="graceLateMin" />
+          <ScalarProperty Name="graceEarlyMin" ColumnName="graceEarlyMin" />
+          <ScalarProperty Name="isWeekOffDay1" ColumnName="isWeekOffDay1" />
+          <ScalarProperty Name="weekOffDay1" ColumnName="weekOffDay1" />
+          <ScalarProperty Name="isWeekOffDay2" ColumnName="isWeekOffDay2" />
+          <ScalarProperty Name="weekOffDay2" ColumnName="weekOffDay2" />
+          <ScalarProperty Name="weekOffDay2_1" ColumnName="weekOffDay2_1" />
+          <ScalarProperty Name="weekOffDay2_2" ColumnName="weekOffDay2_2" />
+          <ScalarProperty Name="weekOffDay2_3" ColumnName="weekOffDay2_3" />
+          <ScalarProperty Name="weekOffDay2_4" ColumnName="weekOffDay2_4" />
+          <ScalarProperty Name="weekOffDay2_5" ColumnName="weekOffDay2_5" />
+          <ScalarProperty Name="consEarlyPunch" ColumnName="consEarlyPunch" />
+          <ScalarProperty Name="consLateGoPunch" ColumnName="consLateGoPunch" />
+          <ScalarProperty Name="deductBreak" ColumnName="deductBreak" />
+          <ScalarProperty Name="cal_HD_WD_LT_Min" ColumnName="cal_HD_WD_LT_Min" />
+          <ScalarProperty Name="cal_AB_WD_LT_Min" ColumnName="cal_AB_WD_LT_Min" />
+          <ScalarProperty Name="cal_PD_HD_WD_LT_Min" ColumnName="cal_PD_HD_WD_LT_Min" />
+          <ScalarProperty Name="cal_PD_AB_WD_LT_Min" ColumnName="cal_PD_AB_WD_LT_Min" />
+          <ScalarProperty Name="isAbs_Prefix_Day_Abs" ColumnName="isAbs_Prefix_Day_Abs" />
+          <ScalarProperty Name="isAbs_Suffix_Day_Abs" ColumnName="isAbs_Suffix_Day_Abs" />
+          <ScalarProperty Name="isAbs_Prefix_Suffix_Day_Abs" ColumnName="isAbs_Prefix_Suffix_Day_Abs" />
+          <ScalarProperty Name="isHalfDayLateDays" ColumnName="isHalfDayLateDays" />
+          <ScalarProperty Name="calHalfDayLateDays" ColumnName="calHalfDayLateDays" />
+          <ScalarProperty Name="isAbsentLateDays" ColumnName="isAbsentLateDays" />
+          <ScalarProperty Name="calAbsentLateDays" ColumnName="calAbsentLateDays" />
+          <ScalarProperty Name="isHalfDayByLate" ColumnName="isHalfDayByLate" />
+          <ScalarProperty Name="calHalfDayByMin" ColumnName="calHalfDayByMin" />
+          <ScalarProperty Name="isHalfDayByEarly" ColumnName="isHalfDayByEarly" />
+          <ScalarProperty Name="calHalfDayByEarlyMin" ColumnName="calHalfDayByEarlyMin" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designations">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.Designation">
+        <MappingFragment StoreEntitySet="Designation">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="desig_id" ColumnName="desig_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="deviceCode" ColumnName="deviceCode" />
+          <ScalarProperty Name="deviceEmpCode" ColumnName="deviceEmpCode" />
+          <ScalarProperty Name="emptype_id" ColumnName="emptype_id" />
+          <ScalarProperty Name="vend_id" ColumnName="vend_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+          <ScalarProperty Name="team_id" ColumnName="team_id" />
+          <ScalarProperty Name="desig_id" ColumnName="desig_id" />
+          <ScalarProperty Name="leaveGroup_id" ColumnName="leaveGroup_id" />
+          <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+          <ScalarProperty Name="shift_id" ColumnName="shift_id" />
+          <ScalarProperty Name="attcat_id" ColumnName="attcat_id" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeEducations">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeEducation">
+        <MappingFragment StoreEntitySet="EmployeeEducation">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="edu_id" ColumnName="edu_id" />
+          <ScalarProperty Name="courseName" ColumnName="courseName" />
+          <ScalarProperty Name="university" ColumnName="university" />
+          <ScalarProperty Name="fromDate" ColumnName="fromDate" />
+          <ScalarProperty Name="toDate" ColumnName="toDate" />
+          <ScalarProperty Name="passoutYear" ColumnName="passoutYear" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeJobHistories">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeJobHistory">
+        <MappingFragment StoreEntitySet="EmployeeJobHistory">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="jhis_id" ColumnName="jhis_id" />
+          <ScalarProperty Name="orgName" ColumnName="orgName" />
+          <ScalarProperty Name="orgAddress" ColumnName="orgAddress" />
+          <ScalarProperty Name="orgContactNo" ColumnName="orgContactNo" />
+          <ScalarProperty Name="fromDate" ColumnName="fromDate" />
+          <ScalarProperty Name="toDate" ColumnName="toDate" />
+          <ScalarProperty Name="disgnation" ColumnName="disgnation" />
+          <ScalarProperty Name="regReason" ColumnName="regReason" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeNominees">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeNominee">
+        <MappingFragment StoreEntitySet="EmployeeNominee">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="nominee_id" ColumnName="nominee_id" />
+          <ScalarProperty Name="nomineeName" ColumnName="nomineeName" />
+          <ScalarProperty Name="perAddress" ColumnName="perAddress" />
+          <ScalarProperty Name="mobNo" ColumnName="mobNo" />
+          <ScalarProperty Name="mobNo1" ColumnName="mobNo1" />
+          <ScalarProperty Name="whatsupNo" ColumnName="whatsupNo" />
+          <ScalarProperty Name="primEmail" ColumnName="primEmail" />
+          <ScalarProperty Name="alterEmail" ColumnName="alterEmail" />
+          <ScalarProperty Name="relation" ColumnName="relation" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeePayDetails">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeePayDetail">
+        <MappingFragment StoreEntitySet="EmployeePayDetails">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="pay_id" ColumnName="pay_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="rec_id" ColumnName="rec_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeePayHeaders">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeePayHeader">
+        <MappingFragment StoreEntitySet="EmployeePayHeader">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="pay_id" ColumnName="pay_id" />
+          <ScalarProperty Name="payType" ColumnName="payType" />
+          <ScalarProperty Name="bankName" ColumnName="bankName" />
+          <ScalarProperty Name="bankAcctNo" ColumnName="bankAcctNo" />
+          <ScalarProperty Name="bankIFSE" ColumnName="bankIFSE" />
+          <ScalarProperty Name="effectiveFrom" ColumnName="effectiveFrom" />
+          <ScalarProperty Name="effectiveTo" ColumnName="effectiveTo" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeSkills">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeSkill">
+        <MappingFragment StoreEntitySet="EmployeeSkill">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="skill_id" ColumnName="skill_id" />
+          <ScalarProperty Name="skillName" ColumnName="skillName" />
+          <ScalarProperty Name="yearExp" ColumnName="yearExp" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeTypes">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeType">
+        <MappingFragment StoreEntitySet="EmployeeType">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="emptype_id" ColumnName="emptype_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeVendors">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeVendor">
+        <MappingFragment StoreEntitySet="EmployeeVendor">
+          <ScalarProperty Name="vend_id" ColumnName="vend_id" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grades">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.Grade">
+        <MappingFragment StoreEntitySet="Grade">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Holidays">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.Holiday">
+        <MappingFragment StoreEntitySet="Holiday">
+          <ScalarProperty Name="hol_id" ColumnName="hol_id" />
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="holidayDate" ColumnName="holidayDate" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveGroups">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.LeaveGroup">
+        <MappingFragment StoreEntitySet="LeaveGroup">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="leaveGroup_id" ColumnName="leaveGroup_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="shortName" ColumnName="shortName" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveGroupDetails">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.LeaveGroupDetail">
+        <MappingFragment StoreEntitySet="LeaveGroupDetails">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="leaveGroup_id" ColumnName="leaveGroup_id" />
+          <ScalarProperty Name="line_id" ColumnName="line_id" />
+          <ScalarProperty Name="leave_id" ColumnName="leave_id" />
+          <ScalarProperty Name="noDays" ColumnName="noDays" />
+          <ScalarProperty Name="monthlyExp" ColumnName="monthlyExp" />
+          <ScalarProperty Name="monthlyDays" ColumnName="monthlyDays" />
+          <ScalarProperty Name="yearlyExp" ColumnName="yearlyExp" />
+          <ScalarProperty Name="yearlyDays" ColumnName="yearlyDays" />
+          <ScalarProperty Name="isAppNP" ColumnName="isAppNP" />
+          <ScalarProperty Name="isAppProb" ColumnName="isAppProb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveTypes">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.LeaveType">
+        <MappingFragment StoreEntitySet="LeaveType">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="leave_id" ColumnName="leave_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="shortName" ColumnName="shortName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissions">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.Permission">
+        <MappingFragment StoreEntitySet="Permission">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="perm_id" ColumnName="perm_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="isMobile" ColumnName="isMobile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="role1" ColumnName="role" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolePermissions">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.RolePermission">
+        <MappingFragment StoreEntitySet="RolePermission">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="rp_id" ColumnName="rp_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shifts">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.Shift">
+        <MappingFragment StoreEntitySet="Shift">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="shift_id" ColumnName="shift_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="shortName" ColumnName="shortName" />
+          <ScalarProperty Name="beginTime24" ColumnName="beginTime24" />
+          <ScalarProperty Name="endTime24" ColumnName="endTime24" />
+          <ScalarProperty Name="berak1" ColumnName="berak1" />
+          <ScalarProperty Name="b1beginTime24" ColumnName="b1beginTime24" />
+          <ScalarProperty Name="b1endTime24" ColumnName="b1endTime24" />
+          <ScalarProperty Name="berak2" ColumnName="berak2" />
+          <ScalarProperty Name="b2beginTime24" ColumnName="b2beginTime24" />
+          <ScalarProperty Name="b2endTime24" ColumnName="b2endTime24" />
+          <ScalarProperty Name="isFlexShift" ColumnName="isFlexShift" />
+          <ScalarProperty Name="punchBeginBeforeMin" ColumnName="punchBeginBeforeMin" />
+          <ScalarProperty Name="punchEndAfterMin" ColumnName="punchEndAfterMin" />
+          <ScalarProperty Name="graceTimeMin" ColumnName="graceTimeMin" />
+          <ScalarProperty Name="partialDaysOn" ColumnName="partialDaysOn" />
+          <ScalarProperty Name="partialDay" ColumnName="partialDay" />
+          <ScalarProperty Name="partialDayBegin" ColumnName="partialDayBegin" />
+          <ScalarProperty Name="partialDayEnd" ColumnName="partialDayEnd" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.Team">
+        <MappingFragment StoreEntitySet="Team">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="team_id" ColumnName="team_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="uname" ColumnName="uname" />
+          <ScalarProperty Name="upass" ColumnName="upass" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="rp_id" ColumnName="rp_id" />
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolePermissionDetails">
+      <EntityTypeMapping TypeName="HRMS_PTPLModel.RolePermissionDetail">
+        <MappingFragment StoreEntitySet="RolePermissionDetails">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="rp_id" ColumnName="rp_id" />
+          <ScalarProperty Name="line_id" ColumnName="line_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="perm_id" ColumnName="perm_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRMS_PTPLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AttendanceCategory">
+    <Key>
+      <PropertyRef Name="attcat_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="attcat_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="shortName" Type="nvarchar(max)" />
+    <Property Name="otFormula_id" Type="int" />
+    <Property Name="minOTmin" Type="int" />
+    <Property Name="maxOTmin" Type="int" />
+    <Property Name="graceLateMin" Type="int" />
+    <Property Name="graceEarlyMin" Type="int" />
+    <Property Name="isWeekOffDay1" Type="bit" />
+    <Property Name="weekOffDay1" Type="int" />
+    <Property Name="isWeekOffDay2" Type="bit" />
+    <Property Name="weekOffDay2" Type="int" />
+    <Property Name="weekOffDay2_1" Type="bit" />
+    <Property Name="weekOffDay2_2" Type="bit" />
+    <Property Name="weekOffDay2_3" Type="bit" />
+    <Property Name="weekOffDay2_4" Type="bit" />
+    <Property Name="weekOffDay2_5" Type="bit" />
+    <Property Name="consEarlyPunch" Type="bit" />
+    <Property Name="consLateGoPunch" Type="bit" />
+    <Property Name="deductBreak" Type="bit" />
+    <Property Name="cal_HD_WD_LT_Min" Type="int" />
+    <Property Name="cal_AB_WD_LT_Min" Type="int" />
+    <Property Name="cal_PD_HD_WD_LT_Min" Type="int" />
+    <Property Name="cal_PD_AB_WD_LT_Min" Type="int" />
+    <Property Name="isAbs_Prefix_Day_Abs" Type="bit" />
+    <Property Name="isAbs_Suffix_Day_Abs" Type="bit" />
+    <Property Name="isAbs_Prefix_Suffix_Day_Abs" Type="bit" />
+    <Property Name="isHalfDayLateDays" Type="bit" />
+    <Property Name="calHalfDayLateDays" Type="int" />
+    <Property Name="isAbsentLateDays" Type="bit" />
+    <Property Name="calAbsentLateDays" Type="int" />
+    <Property Name="isHalfDayByLate" Type="bit" />
+    <Property Name="calHalfDayByMin" Type="int" />
+    <Property Name="isHalfDayByEarly" Type="bit" />
+    <Property Name="calHalfDayByEarlyMin" Type="int" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="comp_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="10" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="dept_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="dept_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Designation">
+    <Key>
+      <PropertyRef Name="desig_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="desig_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="emp_id" />
+    </Key>
+    <Property Name="emp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="comp_id" Type="int" />
+    <Property Name="loc_id" Type="int" />
+    <Property Name="fname" Type="nvarchar(max)" />
+    <Property Name="mname" Type="nvarchar(max)" />
+    <Property Name="lname" Type="nvarchar(max)" />
+    <Property Name="deviceCode" Type="int" />
+    <Property Name="deviceEmpCode" Type="int" />
+    <Property Name="emptype_id" Type="int" />
+    <Property Name="vend_id" Type="int" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="dept_id" Type="int" />
+    <Property Name="team_id" Type="int" />
+    <Property Name="desig_id" Type="int" />
+    <Property Name="leaveGroup_id" Type="int" />
+    <Property Name="grade_id" Type="int" />
+    <Property Name="shift_id" Type="int" />
+    <Property Name="attcat_id" Type="int" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HRMS_PTPL.dbo.EmployeeContact' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeContact">
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="currAddress" Type="nvarchar(max)" />
+          <Property Name="perAddress" Type="nvarchar(max)" />
+          <Property Name="mobNo" Type="nvarchar(max)" />
+          <Property Name="mobNo1" Type="nvarchar(max)" />
+          <Property Name="whatsupNo" Type="nvarchar(max)" />
+          <Property Name="primEmail" Type="nvarchar(max)" />
+          <Property Name="alterEmail" Type="nvarchar(max)" />
+          <Property Name="fatherName" Type="nvarchar(max)" />
+          <Property Name="montherName" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>-->
+  <EntityType Name="EmployeeEducation">
+    <Key>
+      <PropertyRef Name="edu_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="emp_id" Type="int" />
+    <Property Name="edu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="courseName" Type="nvarchar(max)" />
+    <Property Name="university" Type="nvarchar(max)" />
+    <Property Name="fromDate" Type="date" />
+    <Property Name="toDate" Type="date" />
+    <Property Name="passoutYear" Type="int" />
+    <Property Name="grade" Type="nvarchar(max)" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HRMS_PTPL.dbo.EmployeeInfo' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeInfo">
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="gender" Type="nvarchar" MaxLength="1" />
+          <Property Name="birthDate" Type="date" />
+          <Property Name="birthPlace" Type="nvarchar(max)" />
+          <Property Name="bloodGroup" Type="nvarchar" MaxLength="3" />
+          <Property Name="fatherName" Type="nvarchar(max)" />
+          <Property Name="montherName" Type="nvarchar(max)" />
+          <Property Name="panNo" Type="nvarchar(max)" />
+          <Property Name="aadhaarNo" Type="nvarchar(max)" />
+          <Property Name="esicNo" Type="nvarchar(max)" />
+          <Property Name="pfNo" Type="nvarchar(max)" />
+          <Property Name="pfScheme" Type="nvarchar(max)" />
+          <Property Name="joiningDate" Type="date" />
+          <Property Name="confirmDate" Type="date" />
+          <Property Name="resignDate" Type="date" />
+          <Property Name="status" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>-->
+  <EntityType Name="EmployeeJobHistory">
+    <Key>
+      <PropertyRef Name="jhis_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="emp_id" Type="int" />
+    <Property Name="jhis_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orgName" Type="nvarchar(max)" />
+    <Property Name="orgAddress" Type="nvarchar(max)" />
+    <Property Name="orgContactNo" Type="nvarchar(max)" />
+    <Property Name="fromDate" Type="date" />
+    <Property Name="toDate" Type="date" />
+    <Property Name="disgnation" Type="nvarchar(max)" />
+    <Property Name="regReason" Type="nvarchar(max)" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HRMS_PTPL.dbo.EmployeeLeave' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeLeave">
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="leave_id" Type="int" />
+          <Property Name="fromDate" Type="date" />
+          <Property Name="toDate" Type="date" />
+          <Property Name="leaveReason" Type="nvarchar(max)" />
+          <Property Name="leaveStatus" Type="nvarchar" MaxLength="10" />
+          <Property Name="rejReason" Type="nvarchar(max)" />
+          <Property Name="apprvedBy" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>-->
+  <EntityType Name="EmployeeNominee">
+    <Key>
+      <PropertyRef Name="nominee_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="emp_id" Type="int" />
+    <Property Name="nominee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomineeName" Type="nvarchar(max)" />
+    <Property Name="perAddress" Type="nvarchar(max)" />
+    <Property Name="mobNo" Type="nvarchar(max)" />
+    <Property Name="mobNo1" Type="nvarchar(max)" />
+    <Property Name="whatsupNo" Type="nvarchar(max)" />
+    <Property Name="primEmail" Type="nvarchar(max)" />
+    <Property Name="alterEmail" Type="nvarchar(max)" />
+    <Property Name="relation" Type="nvarchar(max)" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeePayDetails">
+    <Key>
+      <PropertyRef Name="rec_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="pay_id" Type="int" />
+    <Property Name="emp_id" Type="int" />
+    <Property Name="rec_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeePayHeader">
+    <Key>
+      <PropertyRef Name="pay_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="emp_id" Type="int" />
+    <Property Name="pay_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payType" Type="nvarchar(max)" />
+    <Property Name="bankName" Type="nvarchar(max)" />
+    <Property Name="bankAcctNo" Type="nvarchar(max)" />
+    <Property Name="bankIFSE" Type="nvarchar(max)" />
+    <Property Name="effectiveFrom" Type="date" />
+    <Property Name="effectiveTo" Type="date" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeSkill">
+    <Key>
+      <PropertyRef Name="skill_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="emp_id" Type="int" />
+    <Property Name="skill_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="skillName" Type="nvarchar(max)" />
+    <Property Name="yearExp" Type="int" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeType">
+    <Key>
+      <PropertyRef Name="emptype_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="emptype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeVendor">
+    <Key>
+      <PropertyRef Name="vend_id" />
+    </Key>
+    <Property Name="vend_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fname" Type="nvarchar(max)" />
+    <Property Name="mname" Type="nvarchar(max)" />
+    <Property Name="lname" Type="nvarchar(max)" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="comp_id" Type="int" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Grade">
+    <Key>
+      <PropertyRef Name="grade_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="grade_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Holiday">
+    <Key>
+      <PropertyRef Name="hol_id" />
+    </Key>
+    <Property Name="hol_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="comp_id" Type="int" />
+    <Property Name="holidayDate" Type="date" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="LeaveGroup">
+    <Key>
+      <PropertyRef Name="leaveGroup_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="leaveGroup_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="shortName" Type="nvarchar" MaxLength="10" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="LeaveGroupDetails">
+    <Key>
+      <PropertyRef Name="line_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="leaveGroup_id" Type="int" />
+    <Property Name="line_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="leave_id" Type="int" />
+    <Property Name="noDays" Type="int" />
+    <Property Name="monthlyExp" Type="bit" />
+    <Property Name="monthlyDays" Type="int" />
+    <Property Name="yearlyExp" Type="bit" />
+    <Property Name="yearlyDays" Type="int" />
+    <Property Name="isAppNP" Type="bit" />
+    <Property Name="isAppProb" Type="bit" />
+  </EntityType>
+  <EntityType Name="LeaveType">
+    <Key>
+      <PropertyRef Name="leave_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="leave_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="shortName" Type="nvarchar" MaxLength="10" />
+    <Property Name="gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="loc_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="loc_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="perm_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="perm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="10" />
+    <Property Name="url" Type="nvarchar(max)" />
+    <Property Name="type" Type="nvarchar" MaxLength="10" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+    <Property Name="isMobile" Type="bit" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role" Type="nvarchar" MaxLength="10" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="RolePermission">
+    <Key>
+      <PropertyRef Name="rp_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="rp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRMS_PTPL.dbo.RolePermissionDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RolePermissionDetails">
+    <Key>
+      <PropertyRef Name="rp_id" />
+      <PropertyRef Name="line_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="rp_id" Type="int" Nullable="false" />
+    <Property Name="line_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="perm_id" Type="int" />
+    <Property Name="role_id" Type="int" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Shift">
+    <Key>
+      <PropertyRef Name="shift_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="shift_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="shortName" Type="nvarchar(max)" />
+    <Property Name="beginTime24" Type="time" Precision="7" />
+    <Property Name="endTime24" Type="time" Precision="7" />
+    <Property Name="berak1" Type="bit" />
+    <Property Name="b1beginTime24" Type="time" Precision="7" />
+    <Property Name="b1endTime24" Type="time" Precision="7" />
+    <Property Name="berak2" Type="bit" />
+    <Property Name="b2beginTime24" Type="time" Precision="7" />
+    <Property Name="b2endTime24" Type="time" Precision="7" />
+    <Property Name="isFlexShift" Type="bit" />
+    <Property Name="punchBeginBeforeMin" Type="int" />
+    <Property Name="punchEndAfterMin" Type="int" />
+    <Property Name="graceTimeMin" Type="int" />
+    <Property Name="partialDaysOn" Type="bit" />
+    <Property Name="partialDay" Type="int" />
+    <Property Name="partialDayBegin" Type="time" Precision="7" />
+    <Property Name="partialDayEnd" Type="time" Precision="7" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="team_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="team_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uname" Type="nvarchar" MaxLength="10" />
+    <Property Name="upass" Type="nvarchar" MaxLength="10" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="10" />
+    <Property Name="rp_id" Type="int" />
+    <Property Name="comp_id" Type="int" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityContainer Name="HRMS_PTPLModelStoreContainer">
+    <EntitySet Name="AttendanceCategory" EntityType="Self.AttendanceCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Designation" EntityType="Self.Designation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeEducation" EntityType="Self.EmployeeEducation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeJobHistory" EntityType="Self.EmployeeJobHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeNominee" EntityType="Self.EmployeeNominee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeePayDetails" EntityType="Self.EmployeePayDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeePayHeader" EntityType="Self.EmployeePayHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeSkill" EntityType="Self.EmployeeSkill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeType" EntityType="Self.EmployeeType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeVendor" EntityType="Self.EmployeeVendor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grade" EntityType="Self.Grade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Holiday" EntityType="Self.Holiday" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeaveGroup" EntityType="Self.LeaveGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeaveGroupDetails" EntityType="Self.LeaveGroupDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeaveType" EntityType="Self.LeaveType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permission" EntityType="Self.Permission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolePermission" EntityType="Self.RolePermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shift" EntityType="Self.Shift" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolePermissionDetails" EntityType="Self.RolePermissionDetails" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RolePermissionDetails].[comp_id] AS [comp_id], 
+    [RolePermissionDetails].[rp_id] AS [rp_id], 
+    [RolePermissionDetails].[line_id] AS [line_id], 
+    [RolePermissionDetails].[name] AS [name], 
+    [RolePermissionDetails].[perm_id] AS [perm_id], 
+    [RolePermissionDetails].[role_id] AS [role_id], 
+    [RolePermissionDetails].[isActive] AS [isActive], 
+    [RolePermissionDetails].[create_dtm] AS [create_dtm], 
+    [RolePermissionDetails].[update_dtm] AS [update_dtm], 
+    [RolePermissionDetails].[created_by] AS [created_by], 
+    [RolePermissionDetails].[updated_by] AS [updated_by]
+    FROM [dbo].[RolePermissionDetails] AS [RolePermissionDetails]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

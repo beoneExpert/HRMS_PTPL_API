@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Second_HRMS_PTPLStoreContainer" CdmEntityContainer="SecondEntities">
+    <EntitySetMapping Name="EmployeeContacts">
+      <EntityTypeMapping TypeName="Second_HRMS_PTPL.EmployeeContact">
+        <MappingFragment StoreEntitySet="EmployeeContact">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="currAddress" ColumnName="currAddress" />
+          <ScalarProperty Name="perAddress" ColumnName="perAddress" />
+          <ScalarProperty Name="mobNo" ColumnName="mobNo" />
+          <ScalarProperty Name="mobNo1" ColumnName="mobNo1" />
+          <ScalarProperty Name="whatsupNo" ColumnName="whatsupNo" />
+          <ScalarProperty Name="primEmail" ColumnName="primEmail" />
+          <ScalarProperty Name="alterEmail" ColumnName="alterEmail" />
+          <ScalarProperty Name="fatherName" ColumnName="fatherName" />
+          <ScalarProperty Name="montherName" ColumnName="montherName" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeInfoes">
+      <EntityTypeMapping TypeName="Second_HRMS_PTPL.EmployeeInfo">
+        <MappingFragment StoreEntitySet="EmployeeInfo">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+          <ScalarProperty Name="birthPlace" ColumnName="birthPlace" />
+          <ScalarProperty Name="bloodGroup" ColumnName="bloodGroup" />
+          <ScalarProperty Name="fatherName" ColumnName="fatherName" />
+          <ScalarProperty Name="montherName" ColumnName="montherName" />
+          <ScalarProperty Name="panNo" ColumnName="panNo" />
+          <ScalarProperty Name="aadhaarNo" ColumnName="aadhaarNo" />
+          <ScalarProperty Name="esicNo" ColumnName="esicNo" />
+          <ScalarProperty Name="pfNo" ColumnName="pfNo" />
+          <ScalarProperty Name="pfScheme" ColumnName="pfScheme" />
+          <ScalarProperty Name="joiningDate" ColumnName="joiningDate" />
+          <ScalarProperty Name="confirmDate" ColumnName="confirmDate" />
+          <ScalarProperty Name="resignDate" ColumnName="resignDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeLeaves">
+      <EntityTypeMapping TypeName="Second_HRMS_PTPL.EmployeeLeave">
+        <MappingFragment StoreEntitySet="EmployeeLeave">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="leave_id" ColumnName="leave_id" />
+          <ScalarProperty Name="fromDate" ColumnName="fromDate" />
+          <ScalarProperty Name="toDate" ColumnName="toDate" />
+          <ScalarProperty Name="leaveReason" ColumnName="leaveReason" />
+          <ScalarProperty Name="leaveStatus" ColumnName="leaveStatus" />
+          <ScalarProperty Name="rejReason" ColumnName="rejReason" />
+          <ScalarProperty Name="apprvedBy" ColumnName="apprvedBy" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolePermissionDetails">
+      <EntityTypeMapping TypeName="Second_HRMS_PTPL.RolePermissionDetail">
+        <MappingFragment StoreEntitySet="RolePermissionDetails">
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="rp_id" ColumnName="rp_id" />
+          <ScalarProperty Name="line_id" ColumnName="line_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="perm_id" ColumnName="perm_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+          <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

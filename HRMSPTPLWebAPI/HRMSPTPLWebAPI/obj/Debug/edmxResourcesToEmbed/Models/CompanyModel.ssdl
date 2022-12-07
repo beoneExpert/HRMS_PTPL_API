@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRMS_PTPLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="comp_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="10" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="emp_id" />
+    </Key>
+    <Property Name="emp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="comp_id" Type="int" />
+    <Property Name="loc_id" Type="int" />
+    <Property Name="fname" Type="nvarchar(max)" />
+    <Property Name="mname" Type="nvarchar(max)" />
+    <Property Name="lname" Type="nvarchar(max)" />
+    <Property Name="deviceCode" Type="int" />
+    <Property Name="deviceEmpCode" Type="int" />
+    <Property Name="emptype_id" Type="int" />
+    <Property Name="vend_id" Type="int" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="dept_id" Type="int" />
+    <Property Name="team_id" Type="int" />
+    <Property Name="desig_id" Type="int" />
+    <Property Name="leaveGroup_id" Type="int" />
+    <Property Name="grade_id" Type="int" />
+    <Property Name="shift_id" Type="int" />
+    <Property Name="attcat_id" Type="int" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="perm_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="perm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="10" />
+    <Property Name="url" Type="nvarchar(max)" />
+    <Property Name="type" Type="nvarchar" MaxLength="10" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+    <Property Name="isMobile" Type="bit" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role" Type="nvarchar" MaxLength="10" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityType Name="RolePermission">
+    <Key>
+      <PropertyRef Name="rp_id" />
+    </Key>
+    <Property Name="comp_id" Type="int" />
+    <Property Name="rp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uname" Type="nvarchar" MaxLength="10" />
+    <Property Name="upass" Type="nvarchar" MaxLength="10" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="10" />
+    <Property Name="rp_id" Type="int" />
+    <Property Name="comp_id" Type="int" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="create_dtm" Type="datetime" />
+    <Property Name="update_dtm" Type="datetime" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="updated_by" Type="int" />
+  </EntityType>
+  <EntityContainer Name="HRMS_PTPLModelStoreContainer">
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permission" EntityType="Self.Permission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolePermission" EntityType="Self.RolePermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

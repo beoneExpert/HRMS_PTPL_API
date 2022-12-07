@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Second_HRMS_PTPL" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="EmployeeContact">
+    <Key>
+      <PropertyRef Name="emp_id" />
+    </Key>
+    <Property Name="comp_id" Type="Int32" />
+    <Property Name="emp_id" Type="Int32" Nullable="false" />
+    <Property Name="currAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="perAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mobNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mobNo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="whatsupNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="primEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="alterEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fatherName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="montherName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="create_dtm" Type="DateTime" Precision="3" />
+    <Property Name="update_dtm" Type="DateTime" Precision="3" />
+    <Property Name="created_by" Type="Int32" />
+    <Property Name="updated_by" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmployeeInfo">
+    <Key>
+      <PropertyRef Name="emp_id" />
+    </Key>
+    <Property Name="comp_id" Type="Int32" />
+    <Property Name="emp_id" Type="Int32" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="birthDate" Type="DateTime" Precision="0" />
+    <Property Name="birthPlace" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="bloodGroup" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="fatherName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="montherName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="panNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="aadhaarNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="esicNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pfNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pfScheme" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="joiningDate" Type="DateTime" Precision="0" />
+    <Property Name="confirmDate" Type="DateTime" Precision="0" />
+    <Property Name="resignDate" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="create_dtm" Type="DateTime" Precision="3" />
+    <Property Name="update_dtm" Type="DateTime" Precision="3" />
+    <Property Name="created_by" Type="Int32" />
+    <Property Name="updated_by" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmployeeLeave">
+    <Key>
+      <PropertyRef Name="leave_id" />
+    </Key>
+    <Property Name="comp_id" Type="Int32" />
+    <Property Name="emp_id" Type="Int32" />
+    <Property Name="leave_id" Type="Int32" Nullable="false" />
+    <Property Name="fromDate" Type="DateTime" Precision="0" />
+    <Property Name="toDate" Type="DateTime" Precision="0" />
+    <Property Name="leaveReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="leaveStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="rejReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="apprvedBy" Type="Int32" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="create_dtm" Type="DateTime" Precision="3" />
+    <Property Name="update_dtm" Type="DateTime" Precision="3" />
+    <Property Name="created_by" Type="Int32" />
+    <Property Name="updated_by" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RolePermissionDetail">
+    <Key>
+      <PropertyRef Name="line_id" />
+    </Key>
+    <Property Name="comp_id" Type="Int32" />
+    <Property Name="rp_id" Type="Int32" />
+    <Property Name="line_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="perm_id" Type="Int32" />
+    <Property Name="role_id" Type="Int32" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="create_dtm" Type="DateTime" Precision="3" />
+    <Property Name="update_dtm" Type="DateTime" Precision="3" />
+    <Property Name="created_by" Type="Int32" />
+    <Property Name="updated_by" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="SecondEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EmployeeContacts" EntityType="Self.EmployeeContact" />
+    <EntitySet Name="EmployeeInfoes" EntityType="Self.EmployeeInfo" />
+    <EntitySet Name="EmployeeLeaves" EntityType="Self.EmployeeLeave" />
+    <EntitySet Name="RolePermissionDetails" EntityType="Self.RolePermissionDetail" />
+  </EntityContainer>
+</Schema>

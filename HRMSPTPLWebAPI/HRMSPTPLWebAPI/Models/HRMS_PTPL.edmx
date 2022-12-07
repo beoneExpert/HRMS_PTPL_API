@@ -1,0 +1,1565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HRMS_PTPLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AttendanceCategory">
+          <Key>
+            <PropertyRef Name="attcat_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="attcat_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="shortName" Type="nvarchar(max)" />
+          <Property Name="otFormula_id" Type="int" />
+          <Property Name="minOTmin" Type="int" />
+          <Property Name="maxOTmin" Type="int" />
+          <Property Name="graceLateMin" Type="int" />
+          <Property Name="graceEarlyMin" Type="int" />
+          <Property Name="isWeekOffDay1" Type="bit" />
+          <Property Name="weekOffDay1" Type="int" />
+          <Property Name="isWeekOffDay2" Type="bit" />
+          <Property Name="weekOffDay2" Type="int" />
+          <Property Name="weekOffDay2_1" Type="bit" />
+          <Property Name="weekOffDay2_2" Type="bit" />
+          <Property Name="weekOffDay2_3" Type="bit" />
+          <Property Name="weekOffDay2_4" Type="bit" />
+          <Property Name="weekOffDay2_5" Type="bit" />
+          <Property Name="consEarlyPunch" Type="bit" />
+          <Property Name="consLateGoPunch" Type="bit" />
+          <Property Name="deductBreak" Type="bit" />
+          <Property Name="cal_HD_WD_LT_Min" Type="int" />
+          <Property Name="cal_AB_WD_LT_Min" Type="int" />
+          <Property Name="cal_PD_HD_WD_LT_Min" Type="int" />
+          <Property Name="cal_PD_AB_WD_LT_Min" Type="int" />
+          <Property Name="isAbs_Prefix_Day_Abs" Type="bit" />
+          <Property Name="isAbs_Suffix_Day_Abs" Type="bit" />
+          <Property Name="isAbs_Prefix_Suffix_Day_Abs" Type="bit" />
+          <Property Name="isHalfDayLateDays" Type="bit" />
+          <Property Name="calHalfDayLateDays" Type="int" />
+          <Property Name="isAbsentLateDays" Type="bit" />
+          <Property Name="calAbsentLateDays" Type="int" />
+          <Property Name="isHalfDayByLate" Type="bit" />
+          <Property Name="calHalfDayByMin" Type="int" />
+          <Property Name="isHalfDayByEarly" Type="bit" />
+          <Property Name="calHalfDayByEarlyMin" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="comp_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="10" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="dept_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="dept_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="Designation">
+          <Key>
+            <PropertyRef Name="desig_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="desig_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="emp_id" />
+          </Key>
+          <Property Name="emp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="comp_id" Type="int" />
+          <Property Name="loc_id" Type="int" />
+          <Property Name="fname" Type="nvarchar(max)" />
+          <Property Name="mname" Type="nvarchar(max)" />
+          <Property Name="lname" Type="nvarchar(max)" />
+          <Property Name="deviceCode" Type="int" />
+          <Property Name="deviceEmpCode" Type="int" />
+          <Property Name="emptype_id" Type="int" />
+          <Property Name="vend_id" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="dept_id" Type="int" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="desig_id" Type="int" />
+          <Property Name="leaveGroup_id" Type="int" />
+          <Property Name="grade_id" Type="int" />
+          <Property Name="shift_id" Type="int" />
+          <Property Name="attcat_id" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'HRMS_PTPL.dbo.EmployeeContact' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeContact">
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="currAddress" Type="nvarchar(max)" />
+          <Property Name="perAddress" Type="nvarchar(max)" />
+          <Property Name="mobNo" Type="nvarchar(max)" />
+          <Property Name="mobNo1" Type="nvarchar(max)" />
+          <Property Name="whatsupNo" Type="nvarchar(max)" />
+          <Property Name="primEmail" Type="nvarchar(max)" />
+          <Property Name="alterEmail" Type="nvarchar(max)" />
+          <Property Name="fatherName" Type="nvarchar(max)" />
+          <Property Name="montherName" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>-->
+        <EntityType Name="EmployeeEducation">
+          <Key>
+            <PropertyRef Name="edu_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="edu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="courseName" Type="nvarchar(max)" />
+          <Property Name="university" Type="nvarchar(max)" />
+          <Property Name="fromDate" Type="date" />
+          <Property Name="toDate" Type="date" />
+          <Property Name="passoutYear" Type="int" />
+          <Property Name="grade" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'HRMS_PTPL.dbo.EmployeeInfo' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeInfo">
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="gender" Type="nvarchar" MaxLength="1" />
+          <Property Name="birthDate" Type="date" />
+          <Property Name="birthPlace" Type="nvarchar(max)" />
+          <Property Name="bloodGroup" Type="nvarchar" MaxLength="3" />
+          <Property Name="fatherName" Type="nvarchar(max)" />
+          <Property Name="montherName" Type="nvarchar(max)" />
+          <Property Name="panNo" Type="nvarchar(max)" />
+          <Property Name="aadhaarNo" Type="nvarchar(max)" />
+          <Property Name="esicNo" Type="nvarchar(max)" />
+          <Property Name="pfNo" Type="nvarchar(max)" />
+          <Property Name="pfScheme" Type="nvarchar(max)" />
+          <Property Name="joiningDate" Type="date" />
+          <Property Name="confirmDate" Type="date" />
+          <Property Name="resignDate" Type="date" />
+          <Property Name="status" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>-->
+        <EntityType Name="EmployeeJobHistory">
+          <Key>
+            <PropertyRef Name="jhis_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="jhis_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="orgName" Type="nvarchar(max)" />
+          <Property Name="orgAddress" Type="nvarchar(max)" />
+          <Property Name="orgContactNo" Type="nvarchar(max)" />
+          <Property Name="fromDate" Type="date" />
+          <Property Name="toDate" Type="date" />
+          <Property Name="disgnation" Type="nvarchar(max)" />
+          <Property Name="regReason" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'HRMS_PTPL.dbo.EmployeeLeave' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeLeave">
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="leave_id" Type="int" />
+          <Property Name="fromDate" Type="date" />
+          <Property Name="toDate" Type="date" />
+          <Property Name="leaveReason" Type="nvarchar(max)" />
+          <Property Name="leaveStatus" Type="nvarchar" MaxLength="10" />
+          <Property Name="rejReason" Type="nvarchar(max)" />
+          <Property Name="apprvedBy" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>-->
+        <EntityType Name="EmployeeNominee">
+          <Key>
+            <PropertyRef Name="nominee_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="nominee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomineeName" Type="nvarchar(max)" />
+          <Property Name="perAddress" Type="nvarchar(max)" />
+          <Property Name="mobNo" Type="nvarchar(max)" />
+          <Property Name="mobNo1" Type="nvarchar(max)" />
+          <Property Name="whatsupNo" Type="nvarchar(max)" />
+          <Property Name="primEmail" Type="nvarchar(max)" />
+          <Property Name="alterEmail" Type="nvarchar(max)" />
+          <Property Name="relation" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="EmployeePayDetails">
+          <Key>
+            <PropertyRef Name="rec_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="pay_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="rec_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeePayHeader">
+          <Key>
+            <PropertyRef Name="pay_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="pay_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payType" Type="nvarchar(max)" />
+          <Property Name="bankName" Type="nvarchar(max)" />
+          <Property Name="bankAcctNo" Type="nvarchar(max)" />
+          <Property Name="bankIFSE" Type="nvarchar(max)" />
+          <Property Name="effectiveFrom" Type="date" />
+          <Property Name="effectiveTo" Type="date" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="EmployeeSkill">
+          <Key>
+            <PropertyRef Name="skill_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emp_id" Type="int" />
+          <Property Name="skill_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="skillName" Type="nvarchar(max)" />
+          <Property Name="yearExp" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="EmployeeType">
+          <Key>
+            <PropertyRef Name="emptype_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="emptype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="EmployeeVendor">
+          <Key>
+            <PropertyRef Name="vend_id" />
+          </Key>
+          <Property Name="vend_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fname" Type="nvarchar(max)" />
+          <Property Name="mname" Type="nvarchar(max)" />
+          <Property Name="lname" Type="nvarchar(max)" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="comp_id" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="Grade">
+          <Key>
+            <PropertyRef Name="grade_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="grade_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="Holiday">
+          <Key>
+            <PropertyRef Name="hol_id" />
+          </Key>
+          <Property Name="hol_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="comp_id" Type="int" />
+          <Property Name="holidayDate" Type="date" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="LeaveGroup">
+          <Key>
+            <PropertyRef Name="leaveGroup_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="leaveGroup_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="shortName" Type="nvarchar" MaxLength="10" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="LeaveGroupDetails">
+          <Key>
+            <PropertyRef Name="line_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="leaveGroup_id" Type="int" />
+          <Property Name="line_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="leave_id" Type="int" />
+          <Property Name="noDays" Type="int" />
+          <Property Name="monthlyExp" Type="bit" />
+          <Property Name="monthlyDays" Type="int" />
+          <Property Name="yearlyExp" Type="bit" />
+          <Property Name="yearlyDays" Type="int" />
+          <Property Name="isAppNP" Type="bit" />
+          <Property Name="isAppProb" Type="bit" />
+        </EntityType>
+        <EntityType Name="LeaveType">
+          <Key>
+            <PropertyRef Name="leave_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="leave_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="shortName" Type="nvarchar" MaxLength="10" />
+          <Property Name="gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="loc_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="loc_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="perm_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="perm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="10" />
+          <Property Name="url" Type="nvarchar(max)" />
+          <Property Name="type" Type="nvarchar" MaxLength="10" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+          <Property Name="isMobile" Type="bit" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="role" Type="nvarchar" MaxLength="10" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="RolePermission">
+          <Key>
+            <PropertyRef Name="rp_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="rp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HRMS_PTPL.dbo.RolePermissionDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="RolePermissionDetails">
+          <Key>
+            <PropertyRef Name="rp_id" />
+            <PropertyRef Name="line_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="rp_id" Type="int" Nullable="false" />
+          <Property Name="line_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="perm_id" Type="int" />
+          <Property Name="role_id" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="Shift">
+          <Key>
+            <PropertyRef Name="shift_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="shift_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="shortName" Type="nvarchar(max)" />
+          <Property Name="beginTime24" Type="time" Precision="7" />
+          <Property Name="endTime24" Type="time" Precision="7" />
+          <Property Name="berak1" Type="bit" />
+          <Property Name="b1beginTime24" Type="time" Precision="7" />
+          <Property Name="b1endTime24" Type="time" Precision="7" />
+          <Property Name="berak2" Type="bit" />
+          <Property Name="b2beginTime24" Type="time" Precision="7" />
+          <Property Name="b2endTime24" Type="time" Precision="7" />
+          <Property Name="isFlexShift" Type="bit" />
+          <Property Name="punchBeginBeforeMin" Type="int" />
+          <Property Name="punchEndAfterMin" Type="int" />
+          <Property Name="graceTimeMin" Type="int" />
+          <Property Name="partialDaysOn" Type="bit" />
+          <Property Name="partialDay" Type="int" />
+          <Property Name="partialDayBegin" Type="time" Precision="7" />
+          <Property Name="partialDayEnd" Type="time" Precision="7" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="team_id" />
+          </Key>
+          <Property Name="comp_id" Type="int" />
+          <Property Name="team_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uname" Type="nvarchar" MaxLength="10" />
+          <Property Name="upass" Type="nvarchar" MaxLength="10" />
+          <Property Name="email" Type="nvarchar(max)" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="10" />
+          <Property Name="rp_id" Type="int" />
+          <Property Name="comp_id" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="create_dtm" Type="datetime" />
+          <Property Name="update_dtm" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="updated_by" Type="int" />
+        </EntityType>
+        <EntityContainer Name="HRMS_PTPLModelStoreContainer">
+          <EntitySet Name="AttendanceCategory" EntityType="Self.AttendanceCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Designation" EntityType="Self.Designation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeEducation" EntityType="Self.EmployeeEducation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeJobHistory" EntityType="Self.EmployeeJobHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeNominee" EntityType="Self.EmployeeNominee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeePayDetails" EntityType="Self.EmployeePayDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeePayHeader" EntityType="Self.EmployeePayHeader" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeSkill" EntityType="Self.EmployeeSkill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeType" EntityType="Self.EmployeeType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeVendor" EntityType="Self.EmployeeVendor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Grade" EntityType="Self.Grade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Holiday" EntityType="Self.Holiday" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeaveGroup" EntityType="Self.LeaveGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeaveGroupDetails" EntityType="Self.LeaveGroupDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeaveType" EntityType="Self.LeaveType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permission" EntityType="Self.Permission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RolePermission" EntityType="Self.RolePermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shift" EntityType="Self.Shift" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RolePermissionDetails" EntityType="Self.RolePermissionDetails" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RolePermissionDetails].[comp_id] AS [comp_id], 
+    [RolePermissionDetails].[rp_id] AS [rp_id], 
+    [RolePermissionDetails].[line_id] AS [line_id], 
+    [RolePermissionDetails].[name] AS [name], 
+    [RolePermissionDetails].[perm_id] AS [perm_id], 
+    [RolePermissionDetails].[role_id] AS [role_id], 
+    [RolePermissionDetails].[isActive] AS [isActive], 
+    [RolePermissionDetails].[create_dtm] AS [create_dtm], 
+    [RolePermissionDetails].[update_dtm] AS [update_dtm], 
+    [RolePermissionDetails].[created_by] AS [created_by], 
+    [RolePermissionDetails].[updated_by] AS [updated_by]
+    FROM [dbo].[RolePermissionDetails] AS [RolePermissionDetails]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HRMS_PTPLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AttendanceCategory">
+          <Key>
+            <PropertyRef Name="attcat_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="attcat_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="shortName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="otFormula_id" Type="Int32" />
+          <Property Name="minOTmin" Type="Int32" />
+          <Property Name="maxOTmin" Type="Int32" />
+          <Property Name="graceLateMin" Type="Int32" />
+          <Property Name="graceEarlyMin" Type="Int32" />
+          <Property Name="isWeekOffDay1" Type="Boolean" />
+          <Property Name="weekOffDay1" Type="Int32" />
+          <Property Name="isWeekOffDay2" Type="Boolean" />
+          <Property Name="weekOffDay2" Type="Int32" />
+          <Property Name="weekOffDay2_1" Type="Boolean" />
+          <Property Name="weekOffDay2_2" Type="Boolean" />
+          <Property Name="weekOffDay2_3" Type="Boolean" />
+          <Property Name="weekOffDay2_4" Type="Boolean" />
+          <Property Name="weekOffDay2_5" Type="Boolean" />
+          <Property Name="consEarlyPunch" Type="Boolean" />
+          <Property Name="consLateGoPunch" Type="Boolean" />
+          <Property Name="deductBreak" Type="Boolean" />
+          <Property Name="cal_HD_WD_LT_Min" Type="Int32" />
+          <Property Name="cal_AB_WD_LT_Min" Type="Int32" />
+          <Property Name="cal_PD_HD_WD_LT_Min" Type="Int32" />
+          <Property Name="cal_PD_AB_WD_LT_Min" Type="Int32" />
+          <Property Name="isAbs_Prefix_Day_Abs" Type="Boolean" />
+          <Property Name="isAbs_Suffix_Day_Abs" Type="Boolean" />
+          <Property Name="isAbs_Prefix_Suffix_Day_Abs" Type="Boolean" />
+          <Property Name="isHalfDayLateDays" Type="Boolean" />
+          <Property Name="calHalfDayLateDays" Type="Int32" />
+          <Property Name="isAbsentLateDays" Type="Boolean" />
+          <Property Name="calAbsentLateDays" Type="Int32" />
+          <Property Name="isHalfDayByLate" Type="Boolean" />
+          <Property Name="calHalfDayByMin" Type="Int32" />
+          <Property Name="isHalfDayByEarly" Type="Boolean" />
+          <Property Name="calHalfDayByEarlyMin" Type="Int32" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="comp_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="dept_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="dept_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Designation">
+          <Key>
+            <PropertyRef Name="desig_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="desig_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="emp_id" />
+          </Key>
+          <Property Name="emp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="loc_id" Type="Int32" />
+          <Property Name="fname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="deviceCode" Type="Int32" />
+          <Property Name="deviceEmpCode" Type="Int32" />
+          <Property Name="emptype_id" Type="Int32" />
+          <Property Name="vend_id" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="dept_id" Type="Int32" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="desig_id" Type="Int32" />
+          <Property Name="leaveGroup_id" Type="Int32" />
+          <Property Name="grade_id" Type="Int32" />
+          <Property Name="shift_id" Type="Int32" />
+          <Property Name="attcat_id" Type="Int32" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EmployeeEducation">
+          <Key>
+            <PropertyRef Name="edu_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="emp_id" Type="Int32" />
+          <Property Name="edu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="courseName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="university" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fromDate" Type="DateTime" Precision="0" />
+          <Property Name="toDate" Type="DateTime" Precision="0" />
+          <Property Name="passoutYear" Type="Int32" />
+          <Property Name="grade" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EmployeeJobHistory">
+          <Key>
+            <PropertyRef Name="jhis_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="emp_id" Type="Int32" />
+          <Property Name="jhis_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orgName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="orgAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="orgContactNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fromDate" Type="DateTime" Precision="0" />
+          <Property Name="toDate" Type="DateTime" Precision="0" />
+          <Property Name="disgnation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="regReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EmployeeNominee">
+          <Key>
+            <PropertyRef Name="nominee_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="emp_id" Type="Int32" />
+          <Property Name="nominee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomineeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="perAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobNo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="whatsupNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="primEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="alterEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="relation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EmployeePayDetail">
+          <Key>
+            <PropertyRef Name="rec_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="pay_id" Type="Int32" />
+          <Property Name="emp_id" Type="Int32" />
+          <Property Name="rec_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="EmployeePayHeader">
+          <Key>
+            <PropertyRef Name="pay_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="emp_id" Type="Int32" />
+          <Property Name="pay_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bankName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bankAcctNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bankIFSE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="effectiveFrom" Type="DateTime" Precision="0" />
+          <Property Name="effectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EmployeeSkill">
+          <Key>
+            <PropertyRef Name="skill_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="emp_id" Type="Int32" />
+          <Property Name="skill_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="skillName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="yearExp" Type="Int32" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EmployeeType">
+          <Key>
+            <PropertyRef Name="emptype_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="emptype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EmployeeVendor">
+          <Key>
+            <PropertyRef Name="vend_id" />
+          </Key>
+          <Property Name="vend_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Grade">
+          <Key>
+            <PropertyRef Name="grade_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="grade_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Holiday">
+          <Key>
+            <PropertyRef Name="hol_id" />
+          </Key>
+          <Property Name="hol_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="holidayDate" Type="DateTime" Precision="0" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LeaveGroup">
+          <Key>
+            <PropertyRef Name="leaveGroup_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="leaveGroup_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="shortName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LeaveGroupDetail">
+          <Key>
+            <PropertyRef Name="line_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="leaveGroup_id" Type="Int32" />
+          <Property Name="line_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="leave_id" Type="Int32" />
+          <Property Name="noDays" Type="Int32" />
+          <Property Name="monthlyExp" Type="Boolean" />
+          <Property Name="monthlyDays" Type="Int32" />
+          <Property Name="yearlyExp" Type="Boolean" />
+          <Property Name="yearlyDays" Type="Int32" />
+          <Property Name="isAppNP" Type="Boolean" />
+          <Property Name="isAppProb" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="LeaveType">
+          <Key>
+            <PropertyRef Name="leave_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="leave_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="shortName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="loc_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="loc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="perm_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="perm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+          <Property Name="isMobile" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="role1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RolePermission">
+          <Key>
+            <PropertyRef Name="rp_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="rp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Shift">
+          <Key>
+            <PropertyRef Name="shift_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="shift_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="shortName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="beginTime24" Type="Time" Precision="7" />
+          <Property Name="endTime24" Type="Time" Precision="7" />
+          <Property Name="berak1" Type="Boolean" />
+          <Property Name="b1beginTime24" Type="Time" Precision="7" />
+          <Property Name="b1endTime24" Type="Time" Precision="7" />
+          <Property Name="berak2" Type="Boolean" />
+          <Property Name="b2beginTime24" Type="Time" Precision="7" />
+          <Property Name="b2endTime24" Type="Time" Precision="7" />
+          <Property Name="isFlexShift" Type="Boolean" />
+          <Property Name="punchBeginBeforeMin" Type="Int32" />
+          <Property Name="punchEndAfterMin" Type="Int32" />
+          <Property Name="graceTimeMin" Type="Int32" />
+          <Property Name="partialDaysOn" Type="Boolean" />
+          <Property Name="partialDay" Type="Int32" />
+          <Property Name="partialDayBegin" Type="Time" Precision="7" />
+          <Property Name="partialDayEnd" Type="Time" Precision="7" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="team_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="team_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="upass" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobile" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="rp_id" Type="Int32" />
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RolePermissionDetail">
+          <Key>
+            <PropertyRef Name="rp_id" />
+            <PropertyRef Name="line_id" />
+          </Key>
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="rp_id" Type="Int32" Nullable="false" />
+          <Property Name="line_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="perm_id" Type="Int32" />
+          <Property Name="role_id" Type="Int32" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="create_dtm" Type="DateTime" Precision="3" />
+          <Property Name="update_dtm" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="updated_by" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="HRMS_PTPL_Entties" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AttendanceCategories" EntityType="Self.AttendanceCategory" />
+          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Designations" EntityType="Self.Designation" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="EmployeeEducations" EntityType="Self.EmployeeEducation" />
+          <EntitySet Name="EmployeeJobHistories" EntityType="Self.EmployeeJobHistory" />
+          <EntitySet Name="EmployeeNominees" EntityType="Self.EmployeeNominee" />
+          <EntitySet Name="EmployeePayDetails" EntityType="Self.EmployeePayDetail" />
+          <EntitySet Name="EmployeePayHeaders" EntityType="Self.EmployeePayHeader" />
+          <EntitySet Name="EmployeeSkills" EntityType="Self.EmployeeSkill" />
+          <EntitySet Name="EmployeeTypes" EntityType="Self.EmployeeType" />
+          <EntitySet Name="EmployeeVendors" EntityType="Self.EmployeeVendor" />
+          <EntitySet Name="Grades" EntityType="Self.Grade" />
+          <EntitySet Name="Holidays" EntityType="Self.Holiday" />
+          <EntitySet Name="LeaveGroups" EntityType="Self.LeaveGroup" />
+          <EntitySet Name="LeaveGroupDetails" EntityType="Self.LeaveGroupDetail" />
+          <EntitySet Name="LeaveTypes" EntityType="Self.LeaveType" />
+          <EntitySet Name="Locations" EntityType="Self.Location" />
+          <EntitySet Name="Permissions" EntityType="Self.Permission" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="RolePermissions" EntityType="Self.RolePermission" />
+          <EntitySet Name="Shifts" EntityType="Self.Shift" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Teams" EntityType="Self.Team" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="RolePermissionDetails" EntityType="Self.RolePermissionDetail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HRMS_PTPLModelStoreContainer" CdmEntityContainer="HRMS_PTPL_Entties">
+          <EntitySetMapping Name="AttendanceCategories">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.AttendanceCategory">
+              <MappingFragment StoreEntitySet="AttendanceCategory">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="attcat_id" ColumnName="attcat_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="shortName" ColumnName="shortName" />
+                <ScalarProperty Name="otFormula_id" ColumnName="otFormula_id" />
+                <ScalarProperty Name="minOTmin" ColumnName="minOTmin" />
+                <ScalarProperty Name="maxOTmin" ColumnName="maxOTmin" />
+                <ScalarProperty Name="graceLateMin" ColumnName="graceLateMin" />
+                <ScalarProperty Name="graceEarlyMin" ColumnName="graceEarlyMin" />
+                <ScalarProperty Name="isWeekOffDay1" ColumnName="isWeekOffDay1" />
+                <ScalarProperty Name="weekOffDay1" ColumnName="weekOffDay1" />
+                <ScalarProperty Name="isWeekOffDay2" ColumnName="isWeekOffDay2" />
+                <ScalarProperty Name="weekOffDay2" ColumnName="weekOffDay2" />
+                <ScalarProperty Name="weekOffDay2_1" ColumnName="weekOffDay2_1" />
+                <ScalarProperty Name="weekOffDay2_2" ColumnName="weekOffDay2_2" />
+                <ScalarProperty Name="weekOffDay2_3" ColumnName="weekOffDay2_3" />
+                <ScalarProperty Name="weekOffDay2_4" ColumnName="weekOffDay2_4" />
+                <ScalarProperty Name="weekOffDay2_5" ColumnName="weekOffDay2_5" />
+                <ScalarProperty Name="consEarlyPunch" ColumnName="consEarlyPunch" />
+                <ScalarProperty Name="consLateGoPunch" ColumnName="consLateGoPunch" />
+                <ScalarProperty Name="deductBreak" ColumnName="deductBreak" />
+                <ScalarProperty Name="cal_HD_WD_LT_Min" ColumnName="cal_HD_WD_LT_Min" />
+                <ScalarProperty Name="cal_AB_WD_LT_Min" ColumnName="cal_AB_WD_LT_Min" />
+                <ScalarProperty Name="cal_PD_HD_WD_LT_Min" ColumnName="cal_PD_HD_WD_LT_Min" />
+                <ScalarProperty Name="cal_PD_AB_WD_LT_Min" ColumnName="cal_PD_AB_WD_LT_Min" />
+                <ScalarProperty Name="isAbs_Prefix_Day_Abs" ColumnName="isAbs_Prefix_Day_Abs" />
+                <ScalarProperty Name="isAbs_Suffix_Day_Abs" ColumnName="isAbs_Suffix_Day_Abs" />
+                <ScalarProperty Name="isAbs_Prefix_Suffix_Day_Abs" ColumnName="isAbs_Prefix_Suffix_Day_Abs" />
+                <ScalarProperty Name="isHalfDayLateDays" ColumnName="isHalfDayLateDays" />
+                <ScalarProperty Name="calHalfDayLateDays" ColumnName="calHalfDayLateDays" />
+                <ScalarProperty Name="isAbsentLateDays" ColumnName="isAbsentLateDays" />
+                <ScalarProperty Name="calAbsentLateDays" ColumnName="calAbsentLateDays" />
+                <ScalarProperty Name="isHalfDayByLate" ColumnName="isHalfDayByLate" />
+                <ScalarProperty Name="calHalfDayByMin" ColumnName="calHalfDayByMin" />
+                <ScalarProperty Name="isHalfDayByEarly" ColumnName="isHalfDayByEarly" />
+                <ScalarProperty Name="calHalfDayByEarlyMin" ColumnName="calHalfDayByEarlyMin" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Designations">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.Designation">
+              <MappingFragment StoreEntitySet="Designation">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="desig_id" ColumnName="desig_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="mname" ColumnName="mname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="deviceCode" ColumnName="deviceCode" />
+                <ScalarProperty Name="deviceEmpCode" ColumnName="deviceEmpCode" />
+                <ScalarProperty Name="emptype_id" ColumnName="emptype_id" />
+                <ScalarProperty Name="vend_id" ColumnName="vend_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="desig_id" ColumnName="desig_id" />
+                <ScalarProperty Name="leaveGroup_id" ColumnName="leaveGroup_id" />
+                <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+                <ScalarProperty Name="shift_id" ColumnName="shift_id" />
+                <ScalarProperty Name="attcat_id" ColumnName="attcat_id" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeEducations">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeEducation">
+              <MappingFragment StoreEntitySet="EmployeeEducation">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="edu_id" ColumnName="edu_id" />
+                <ScalarProperty Name="courseName" ColumnName="courseName" />
+                <ScalarProperty Name="university" ColumnName="university" />
+                <ScalarProperty Name="fromDate" ColumnName="fromDate" />
+                <ScalarProperty Name="toDate" ColumnName="toDate" />
+                <ScalarProperty Name="passoutYear" ColumnName="passoutYear" />
+                <ScalarProperty Name="grade" ColumnName="grade" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeJobHistories">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeJobHistory">
+              <MappingFragment StoreEntitySet="EmployeeJobHistory">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="jhis_id" ColumnName="jhis_id" />
+                <ScalarProperty Name="orgName" ColumnName="orgName" />
+                <ScalarProperty Name="orgAddress" ColumnName="orgAddress" />
+                <ScalarProperty Name="orgContactNo" ColumnName="orgContactNo" />
+                <ScalarProperty Name="fromDate" ColumnName="fromDate" />
+                <ScalarProperty Name="toDate" ColumnName="toDate" />
+                <ScalarProperty Name="disgnation" ColumnName="disgnation" />
+                <ScalarProperty Name="regReason" ColumnName="regReason" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeNominees">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeNominee">
+              <MappingFragment StoreEntitySet="EmployeeNominee">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="nominee_id" ColumnName="nominee_id" />
+                <ScalarProperty Name="nomineeName" ColumnName="nomineeName" />
+                <ScalarProperty Name="perAddress" ColumnName="perAddress" />
+                <ScalarProperty Name="mobNo" ColumnName="mobNo" />
+                <ScalarProperty Name="mobNo1" ColumnName="mobNo1" />
+                <ScalarProperty Name="whatsupNo" ColumnName="whatsupNo" />
+                <ScalarProperty Name="primEmail" ColumnName="primEmail" />
+                <ScalarProperty Name="alterEmail" ColumnName="alterEmail" />
+                <ScalarProperty Name="relation" ColumnName="relation" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeePayDetails">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeePayDetail">
+              <MappingFragment StoreEntitySet="EmployeePayDetails">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="pay_id" ColumnName="pay_id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="rec_id" ColumnName="rec_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeePayHeaders">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeePayHeader">
+              <MappingFragment StoreEntitySet="EmployeePayHeader">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="pay_id" ColumnName="pay_id" />
+                <ScalarProperty Name="payType" ColumnName="payType" />
+                <ScalarProperty Name="bankName" ColumnName="bankName" />
+                <ScalarProperty Name="bankAcctNo" ColumnName="bankAcctNo" />
+                <ScalarProperty Name="bankIFSE" ColumnName="bankIFSE" />
+                <ScalarProperty Name="effectiveFrom" ColumnName="effectiveFrom" />
+                <ScalarProperty Name="effectiveTo" ColumnName="effectiveTo" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeSkills">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeSkill">
+              <MappingFragment StoreEntitySet="EmployeeSkill">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="skill_id" ColumnName="skill_id" />
+                <ScalarProperty Name="skillName" ColumnName="skillName" />
+                <ScalarProperty Name="yearExp" ColumnName="yearExp" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeTypes">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeType">
+              <MappingFragment StoreEntitySet="EmployeeType">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="emptype_id" ColumnName="emptype_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeVendors">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.EmployeeVendor">
+              <MappingFragment StoreEntitySet="EmployeeVendor">
+                <ScalarProperty Name="vend_id" ColumnName="vend_id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="mname" ColumnName="mname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grades">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.Grade">
+              <MappingFragment StoreEntitySet="Grade">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Holidays">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.Holiday">
+              <MappingFragment StoreEntitySet="Holiday">
+                <ScalarProperty Name="hol_id" ColumnName="hol_id" />
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="holidayDate" ColumnName="holidayDate" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeaveGroups">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.LeaveGroup">
+              <MappingFragment StoreEntitySet="LeaveGroup">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="leaveGroup_id" ColumnName="leaveGroup_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="shortName" ColumnName="shortName" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeaveGroupDetails">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.LeaveGroupDetail">
+              <MappingFragment StoreEntitySet="LeaveGroupDetails">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="leaveGroup_id" ColumnName="leaveGroup_id" />
+                <ScalarProperty Name="line_id" ColumnName="line_id" />
+                <ScalarProperty Name="leave_id" ColumnName="leave_id" />
+                <ScalarProperty Name="noDays" ColumnName="noDays" />
+                <ScalarProperty Name="monthlyExp" ColumnName="monthlyExp" />
+                <ScalarProperty Name="monthlyDays" ColumnName="monthlyDays" />
+                <ScalarProperty Name="yearlyExp" ColumnName="yearlyExp" />
+                <ScalarProperty Name="yearlyDays" ColumnName="yearlyDays" />
+                <ScalarProperty Name="isAppNP" ColumnName="isAppNP" />
+                <ScalarProperty Name="isAppProb" ColumnName="isAppProb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeaveTypes">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.LeaveType">
+              <MappingFragment StoreEntitySet="LeaveType">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="leave_id" ColumnName="leave_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="shortName" ColumnName="shortName" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.Permission">
+              <MappingFragment StoreEntitySet="Permission">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="perm_id" ColumnName="perm_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+                <ScalarProperty Name="isMobile" ColumnName="isMobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="role1" ColumnName="role" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolePermissions">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.RolePermission">
+              <MappingFragment StoreEntitySet="RolePermission">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="rp_id" ColumnName="rp_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shifts">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.Shift">
+              <MappingFragment StoreEntitySet="Shift">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="shift_id" ColumnName="shift_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="shortName" ColumnName="shortName" />
+                <ScalarProperty Name="beginTime24" ColumnName="beginTime24" />
+                <ScalarProperty Name="endTime24" ColumnName="endTime24" />
+                <ScalarProperty Name="berak1" ColumnName="berak1" />
+                <ScalarProperty Name="b1beginTime24" ColumnName="b1beginTime24" />
+                <ScalarProperty Name="b1endTime24" ColumnName="b1endTime24" />
+                <ScalarProperty Name="berak2" ColumnName="berak2" />
+                <ScalarProperty Name="b2beginTime24" ColumnName="b2beginTime24" />
+                <ScalarProperty Name="b2endTime24" ColumnName="b2endTime24" />
+                <ScalarProperty Name="isFlexShift" ColumnName="isFlexShift" />
+                <ScalarProperty Name="punchBeginBeforeMin" ColumnName="punchBeginBeforeMin" />
+                <ScalarProperty Name="punchEndAfterMin" ColumnName="punchEndAfterMin" />
+                <ScalarProperty Name="graceTimeMin" ColumnName="graceTimeMin" />
+                <ScalarProperty Name="partialDaysOn" ColumnName="partialDaysOn" />
+                <ScalarProperty Name="partialDay" ColumnName="partialDay" />
+                <ScalarProperty Name="partialDayBegin" ColumnName="partialDayBegin" />
+                <ScalarProperty Name="partialDayEnd" ColumnName="partialDayEnd" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.Team">
+              <MappingFragment StoreEntitySet="Team">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="uname" ColumnName="uname" />
+                <ScalarProperty Name="upass" ColumnName="upass" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="rp_id" ColumnName="rp_id" />
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolePermissionDetails">
+            <EntityTypeMapping TypeName="HRMS_PTPLModel.RolePermissionDetail">
+              <MappingFragment StoreEntitySet="RolePermissionDetails">
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="rp_id" ColumnName="rp_id" />
+                <ScalarProperty Name="line_id" ColumnName="line_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="perm_id" ColumnName="perm_id" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="create_dtm" ColumnName="create_dtm" />
+                <ScalarProperty Name="update_dtm" ColumnName="update_dtm" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
